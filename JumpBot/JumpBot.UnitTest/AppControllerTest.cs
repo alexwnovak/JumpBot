@@ -14,5 +14,15 @@ namespace JumpBot.UnitTest
 
          Assert.AreEqual( 1, exitCode );
       }
+
+      [TestMethod]
+      public void Run_EmptyArguments_ReturnsExitCodeOne()
+      {
+         var appController = new AppController();
+
+         int exitCode = appController.Run( new string[0] );
+
+         Assert.AreEqual( 1, exitCode );
+      }
    }
 }

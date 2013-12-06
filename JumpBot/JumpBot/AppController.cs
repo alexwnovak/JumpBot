@@ -4,7 +4,7 @@
    {
       public int Run( string[] arguments )
       {
-         if ( arguments == null )
+         if ( arguments == null || arguments.Length == 0 )
          {
             return 1;
          }
