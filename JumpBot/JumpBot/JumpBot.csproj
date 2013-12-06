@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="AppController.cs" />
     <Compile Include="Dependency.cs" />
+    <Compile Include="IScriptLoader.cs" />
+    <Compile Include="JumpScript.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
