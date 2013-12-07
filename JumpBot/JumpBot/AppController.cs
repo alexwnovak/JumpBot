@@ -4,7 +4,7 @@
    {
       public int Run( string[] arguments )
       {
-         if ( arguments == null || arguments.Length == 0 )
+         if ( arguments == null || arguments.Length == 0 || !Dependency.Resolve<IFileSystem>().FileExists( arguments[0] ) )
          {
             return 1;
          }

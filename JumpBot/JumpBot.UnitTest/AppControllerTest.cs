@@ -39,6 +39,10 @@ namespace JumpBot.UnitTest
 
          // Setup
 
+         var fileSystemMock = new Mock<IFileSystem>();
+         fileSystemMock.Setup( fs => fs.FileExists( filePath ) ).Returns( true );
+         Dependency.RegisterInstance( fileSystemMock.Object );
+
          var scriptLoaderMock = new Mock<IScriptLoader>();
          Dependency.RegisterInstance( scriptLoaderMock.Object );
 
@@ -51,6 +55,27 @@ namespace JumpBot.UnitTest
          // Assert
 
          scriptLoaderMock.Verify( sl => sl.LoadFromFile( filePath ), Times.Once );
+      }
+
+      [TestMethod]
+      public void Run_FileDoesNotExist_ReturnsExitCodeOne()
+      {
+         const string filePath = "SomeScript.txt";
+
+         // Setup
+
+         var fileSystemMock = new Mock<IFileSystem>();
+         Dependency.RegisterInstance( fileSystemMock.Object );
+
+         // Test
+
+         var appController = new AppController();
+
+         int exitCode = appController.Run( filePath.AsArray() );
+
+         // Assert
+
+         Assert.AreEqual( 1, exitCode );
       }
    }
 }
