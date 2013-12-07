@@ -9,6 +9,10 @@
             return 1;
          }
 
+         var scriptLoader = Dependency.Resolve<IScriptLoader>();
+
+         scriptLoader.LoadFromFile( arguments[0] );
+
          return 0;
       }
    }
