@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AppController.cs" />
     <Compile Include="Dependency.cs" />
+    <Compile Include="FileSystem.cs" />
     <Compile Include="IFileSystem.cs" />
     <Compile Include="IScriptLoader.cs" />
     <Compile Include="JumpScript.cs" />

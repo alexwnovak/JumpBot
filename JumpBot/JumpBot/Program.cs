@@ -6,6 +6,7 @@
       {
          Dependency.CreateUnityContainer();
          Dependency.RegisterType<IScriptLoader, ScriptLoader>();
+         Dependency.RegisterType<IFileSystem, FileSystem>();
       }
 
       internal static void Main( string[] arguments )
