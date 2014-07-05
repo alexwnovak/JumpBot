@@ -1,7 +1,7 @@
-﻿namespace JumpBot
-{
-   public interface IFileSystem
-   {
-      bool FileExists( string filePath );
-   }
-}
+﻿//namespace JumpBot
+//{
+//   public interface IFileSystem
+//   {
+//      bool FileExists( string filePath );
+//   }
+//}
