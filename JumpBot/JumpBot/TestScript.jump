@@ -4,6 +4,25 @@
 #   Duck    @42
 #   Jump    @57
 
+down     @17
+
+down     @42
+
+wait     165
+
+up       @42
+
+press    @57
+
+m1
+
+wait     200
+down     @42
+
+wait     1200
+
+up       @17
+up       @42
 
 
 #m1
