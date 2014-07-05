@@ -133,6 +133,7 @@
          this.Name = "MainForm";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "JumpBot UI";
+         this.Load += new System.EventHandler(this.MainForm_Load);
          this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
          this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
          this.ResumeLayout(false);

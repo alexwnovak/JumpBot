@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30218.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpBot", "JumpBot\JumpBot.csproj", "{F52B63D7-8438-419E-91BE-17549CDDC51B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpBot.UnitTest", "JumpBot.UnitTest\JumpBot.UnitTest.csproj", "{DFC83326-AD02-4C75-AE64-35943E22FB89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpUI", "JumpUI\JumpUI.csproj", "{0CD62DAE-C512-44CD-BD64-EFB4CD24780F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpBot.Scripting", "JumpBot.Scripting\JumpBot.Scripting.csproj", "{67E3D34D-1C8E-4030-9CE5-3DB0C7BA7AFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0CD62DAE-C512-44CD-BD64-EFB4CD24780F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CD62DAE-C512-44CD-BD64-EFB4CD24780F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CD62DAE-C512-44CD-BD64-EFB4CD24780F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E3D34D-1C8E-4030-9CE5-3DB0C7BA7AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E3D34D-1C8E-4030-9CE5-3DB0C7BA7AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E3D34D-1C8E-4030-9CE5-3DB0C7BA7AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E3D34D-1C8E-4030-9CE5-3DB0C7BA7AFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
