@@ -19,7 +19,7 @@ void InputSimulator::KeyDown(int scanCode)
    input.type = INPUT_KEYBOARD;
    input.ki.wVk = scanCode;
    input.ki.wScan = scanCode;
-   input.ki.dwFlags = 0x00; // | KEYEVENTF_SCANCODE;
+   input.ki.dwFlags = 0x00 | KEYEVENTF_SCANCODE;
 
    SendInput(1, &input, sizeof(INPUT));
 }
@@ -32,7 +32,7 @@ void InputSimulator::KeyUp(int scanCode)
    input.type = INPUT_KEYBOARD;
    input.ki.wVk = scanCode;
    input.ki.wScan = scanCode;
-   input.ki.dwFlags = KEYEVENTF_KEYUP; // | KEYEVENTF_SCANCODE;
+   input.ki.dwFlags = KEYEVENTF_KEYUP | KEYEVENTF_SCANCODE;
 
    SendInput(1, &input, sizeof(INPUT));
 }
@@ -47,14 +47,14 @@ void InputSimulator::KeyPress(int scanCode)
    inputs[0].type = INPUT_KEYBOARD;
    inputs[0].ki.wVk = scanCode;
    inputs[0].ki.wScan = scanCode;
-   inputs[0].ki.dwFlags = 0x00; // | KEYEVENTF_SCANCODE;
+   inputs[0].ki.dwFlags = 0x00 | KEYEVENTF_SCANCODE;
 
    // Second is KeyUp event
 
    inputs[1].type = INPUT_KEYBOARD;
    inputs[1].ki.wVk = scanCode;
    inputs[1].ki.wScan = scanCode;
-   inputs[1].ki.dwFlags = KEYEVENTF_KEYUP; // | KEYEVENTF_SCANCODE;
+   inputs[1].ki.dwFlags = KEYEVENTF_KEYUP | KEYEVENTF_SCANCODE;
 
    SendInput(2, inputs, sizeof(INPUT));
 }
