@@ -27,15 +27,27 @@
     <ClInclude Include="InputSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="JumpBotCpp.cpp">
+    <ClCompile Include="InputSimulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputSimulator.cpp">
+    <ClCompile Include="Clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
