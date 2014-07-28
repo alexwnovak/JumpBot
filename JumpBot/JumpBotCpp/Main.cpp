@@ -2,14 +2,50 @@
 #include "InputSimulator.h"
 #include "Clock.h"
 #include "ScriptLoader.h"
+#include "BetterClock.h"
 
 #include <Windows.h>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
+HHOOK mouseHook;
+
+LRESULT CALLBACK HookCallback(int nCode, WPARAM wParam, LPARAM lParam)
+{
+   cout << nCode << endl;
+   return CallNextHookEx(mouseHook, nCode, wParam, lParam);
+}
+
+void MouseHook()
+{
+   cout << "Setting hook... ";
+   
+   mouseHook = SetWindowsHookEx( WH_MOUSE, HookCallback, NULL, 0 );
+
+   if (mouseHook == NULL)
+   {
+      cout << "Failed" << endl;
+      return;
+   }
+
+   cout << "done" << endl;
+
+   // Wait
+
+   string input;
+   cin >> input;
+
+   UnhookWindowsHookEx(mouseHook);
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
+   MouseHook();
+
+   return 0;
+
    //if (argc < 2)
    //{
    //   cout << "Syntax: jump <script>" << endl;
@@ -22,32 +58,22 @@ int _tmain(int argc, _TCHAR* argv[])
    //   return 1;
    //}
 
-   cout << "Running in 2 seconds..." << endl;
-
    Clock::Initialize();
-   Clock::Wait( 2000 );
+   LONGLONG startTime = Clock::GetTime();
 
-   // Ctap
+   //TIMECAPS timeCaps;
+   //timeGetDevCaps( &timeCaps, sizeof( TIMECAPS ) );
 
-   const int Key_W = 17;
-   const int Key_Duck = 42;
-   const int Key_Jump = 57;
+   //BetterClock betterClock;
 
-   InputSimulator simulator;
+   //betterClock.Wait(50);
 
-   simulator.KeyDown( Key_W );
+   Clock::Wait( 75 );
 
-   Clock::Wait( 1000 );
+   // Done
 
-   simulator.KeyDown( Key_Duck );
-   Clock::Wait( 150 );
-   simulator.KeyUp( Key_Duck );
-   simulator.KeyPress( Key_Jump );
-   simulator.LeftClick();
-
-   simulator.KeyUp( Key_W );
-
-   //Clock::Initialize();
+   LONGLONG endTime = Clock::GetTime();
+   cout << "Elapsed time: " << (endTime - startTime) << endl;
 
    //cout << "Waiting..." << endl;
 

@@ -15,7 +15,6 @@ bool ScriptLoader::Load(_TCHAR* fileName)
 
    while (getline(fileStream, line))
    {
-      
       cout << line << endl;
    }
       

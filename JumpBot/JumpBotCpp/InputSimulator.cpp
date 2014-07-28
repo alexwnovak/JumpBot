@@ -40,7 +40,7 @@ void InputSimulator::KeyUp(int scanCode)
 void InputSimulator::KeyPress(int scanCode)
 {
    INPUT inputs[2];
-   ZeroMemory(inputs, 0, sizeof(INPUT) * 2);
+   ZeroMemory(inputs, sizeof(INPUT) * 2);
 
    // First is KeyDown event
 

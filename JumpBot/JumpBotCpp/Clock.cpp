@@ -28,3 +28,14 @@ void Clock::Wait(LONGLONG milliseconds)
       }
    }
 }
+
+LONGLONG Clock::GetTime()
+{
+   LARGE_INTEGER time;
+   QueryPerformanceCounter(&time);
+
+   time.QuadPart *= 1000;
+   time.QuadPart /= m_Frequency.QuadPart;
+
+   return time.QuadPart;
+}
